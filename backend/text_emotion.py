@@ -16,6 +16,6 @@ def detect_text_emotion(text: str) -> Dict:
       for emotion, keywords in EMOTION_KEYWORDS.items():
                 for kw in keywords:
                               if kw in text_lower: emotion_scores[emotion] += 1
-                                    dominant = max(emotion_scores, key=emotion_scores.get) if sum(emotion_scores.values()) > 0 else 'neutral'
-                      conf = emotion_scores[dominant] / max(sum(emotion_scores.values()), 1)
+                            dominant = max(emotion_scores, key=emotion_scores.get) if sum(emotion_scores.values()) > 0 else 'neutral'
+              conf = emotion_scores[dominant] / max(sum(emotion_scores.values()), 1)
             return {'emotion': dominant, 'confidence': min(conf, 1.0), 'scores': emotion_scores}
