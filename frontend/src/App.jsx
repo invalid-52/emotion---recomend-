@@ -2,8 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Upload, Camera, Zap, Loader2, AlertCircle, Headphones, Music } from 'lucide-react'
 
-const APIURL = 'http://localhost:8000'
-
+const APIURL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 export default function App() {
   const [activeTab, setActiveTab] = useState('image')
   const [inputData, setInputData] = useState('')
